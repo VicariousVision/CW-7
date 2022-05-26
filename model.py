@@ -58,7 +58,14 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    predict_vector = feature_vector_df[['Madrid_wind_speed','Bilbao_rain_1h','Valencia_wind_speed']]
+
+
+    predict_vector = feature_vector_df[['Barcelona_temp','Bilbao_temp_min','Bilbao_temp','Barcelona_temp_min','Bilbao_temp_max','Seville_temp_min','Madrid_temp','Madrid_temp_min']]
+    
+
+
+
+    
     # ------------------------------------------------------------------------
 
     return predict_vector
@@ -107,4 +114,4 @@ def make_prediction(data, model):
     # Perform prediction with model and preprocessed data.
     prediction = model.predict(prep_data)
     # Format as list for output standardisation.
-    return prediction[0].tolist()
+    return prediction.tolist()
